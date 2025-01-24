@@ -28,16 +28,18 @@ export default function ordersDetails() {
           </div>
       </nav>
 
-      <section className='lg:flex w-full  justify-center'>
-        <div className='h-full w-[50%] bg-white px-40'>
-            <div>
-              <h1 className='font-fredoka text-2xl mt-5'>Summary Order</h1>
-              <p className='mt-1 mb-2 font-fredoka text-gray-400'>Check the orders before transaction</p>
+      <section className='xl:flex gap-16 justify-center bg-[#F6F8FA]'>
+        <div className='flex flex-col justify-center bg-[#F6F8FA]  w-[40%] pl-20 py-6'>
+            
+          <div className='border rounded-xl bg-white'>
+            <div className='border-b bg-green-600 rounded-t-xl text-white                                                                                       '>
+              <h1 className='text-center font-fredoka text-2xl pt-3 '>Summary Order</h1>
+              <p className='text-center mt-1 mb-2 font-fredoka text-gray-400'>Check the orders before transaction</p>
             </div>
 
-            <div className='lg:flex lg:flex-col border-2 border-gray-300 bg-gray-50 rounded-lg h-[450px] overflow-auto'>
+            <div className='p-5 lg:flex lg:flex-col bg-white rounded-lg h-[450px] overflow-auto mt-5'>
               <div className='flex gap-5 w-full p-5'>
-                <div className='border border-gray-300 border-2 w-[200px] h-[100px] rounded-md overflow-hidden'>
+                <div className='border border-2 w-[200px] h-[100px] rounded-md overflow-hidden'>
                   <Image
                     src={`/image/frenc fries.webp`}
                     width={200}
@@ -151,7 +153,8 @@ export default function ordersDetails() {
              
  
             </div>
-            <div className='mt-10'>
+
+            <div className='p-7 mt-10'>
               <div className='flex gap-2 items-center'>
                 <label htmlFor="" className='font-fredoka text-xl mb-3'>Payment Method</label>
                 <HiInformationCircle size={18} color="gray"/>
@@ -204,18 +207,11 @@ export default function ordersDetails() {
               </div>
             </div>
           </div>
-        <div className='bg-gray-50 w-[50%] h-full pl-3'>
 
-          <div className='w-[80%]'>
+          </div>
 
-            {/* <div>
-              <h1 className='font-fredoka text-2xl mt-5'>Summary Order</h1>
-              <p className='mt-1 mb-2 font-fredoka text-gray-400'>Check the orders before transaction</p>
-            </div> */}
-
-            <div>
-
-              <div className="flex flex-col gap-2 mt-5 ">
+        <div className='xl:flex items-center xl:justify-center w-[60%] bg-white '>
+              <div className="flex flex-col gap-2 w-[90%] ">
               
                 <div className='gap-3 w-full lg:flex lg:flex-col justify-center items-center font-fredoka'>
                   <p className='text-gray-600 text-xl'>Total Payment</p>
@@ -290,9 +286,7 @@ export default function ordersDetails() {
               </div>
 
 
-            </div>
 
-        </div>
         </div>
       </section>
     </>

@@ -27,9 +27,12 @@ export default function Index() {
                 }}>
                     <div className="absolute inset-0 bg-[rgba(0,0,0,0.5)]"></div>
                     <div className='absolute w-full h-screen flex flex-col items-center justify-center'>
-                        <h1 className='items-center text-[20rem] font-bold font-fredoka text-white'>Ray Coffe</h1>
-                        <p className='text-xl text-white'>Tempat di mana aroma kopi terbaik bertemu dengan cerita hangat. Nikmati setiap tegukan, rasakan suasana yang menenangkan.</p>
-                        <Link href={`/Menu`} className="mt-10 text-green-700 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800 w-[20%]">Menu</Link>
+                        <div className='relative ml-20'>
+                            <p className='absolute left-[160px] -top-[20px] text-[4rem] font-bold font-fredoka text-white'>Hello... Welcome</p>
+                            <h1 className='ml-36 text-[15rem] font-bold font-fredoka text-white'>Ray Coffe</h1>
+                            <p className=' text-2xl text-white font-fredoka'>Tempat di mana aroma kopi terbaik bertemu dengan cerita hangat. Nikmati setiap tegukan, rasakan suasana yang menenangkan.</p>
+                        </div>
+                        <Link href={`/Menu`} className="mt-[2rem] text-gray-900 bg-[#118B50] text-white focus:ring-4 focus:outline-none focus:ring-[#118B50]/50 font-medium rounded-lg text-xl font-fredoka text-center inline-flex justify-center items-center dark:focus:ring-[#118B50]/50 me-2 xl:w-[250px] xl:h-[50px] hover:scale-110 duration-300">Menu</Link>
                     </div>
                 </div>
             </>

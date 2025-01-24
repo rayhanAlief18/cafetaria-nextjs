@@ -6,6 +6,7 @@ import Select from 'react-select'
 import Image from 'next/image';
 import Category from './Category';
 import Modal from './Modal/Index'
+import axios from 'axios';
 import Link from 'next/link'
 import { MenuListTypes } from '../../../utils/types/DataTypes';
 import { VscOutput, VscChromeClose, VscArchive } from "react-icons/vsc";
@@ -14,6 +15,21 @@ import { RxCheckCircled } from "react-icons/rx";
 
 export default function Menu() {
 
+    const [getMenu,getSetMenu] = useState([]);
+
+    useEffect(()=>{
+        const fetchMenu = async ()=>{
+            try{    
+                const responseMenu = await axios.get('http://127.0.0.1:8000/api/menu');
+                console.log(responseMenu.data.data);
+                getSetMenu(responseMenu.data.data);
+            }catch(error){
+                console.error('Error fetching menu data:', error);
+            }
+        };
+
+        fetchMenu();
+    },[])
 
     const GetMenu =[
         
@@ -101,7 +117,6 @@ export default function Menu() {
     ]
 
     const [menu, setMenu] = useState<any>(GetMenu)
-
     const [tab,setTab] = useState<string>("All")
     const filterCategory = (categItem:string)=>{
         setTab(categItem)
@@ -154,7 +169,7 @@ export default function Menu() {
         <>
             
             <div className="flex flex-col ">
-                <Navbar welcome={welcome} />
+                <Navbar/>
 
                 <div className='lg:flex lg:flex-row bg-gray-50'>
                     <div className='lg:w-[250%]  lg:ml-[18%] lg:mt-10 sm:mt-20 px-2'>
@@ -301,21 +316,21 @@ export default function Menu() {
                         <div className='flex flex-col gap-5  pb-5'>
                             <label className='pl-5 text-xl font-fredoka'>{`${tab}`}</label>
                             <div className='flex flex-wrap flex-row w-full sm:gap-x-3 sm:gap-y-4 md:gap-x-6 md:gap-y-5 justify-start items-center sm:px-5'>
-                                {menu.map((MenuList : MenuListTypes, Index:number)=>{
+                                {getMenu.map((MenuList : MenuListTypes, Index:number)=>{
                                         return(
                                             <div 
                                             onClick={isSmallScreen ? () => setSelected(MenuList) : undefined}
                                             key={Index} 
                                             className='relative sm:w-[48%] sm:h-[250px] lg:w-[30%] lg:h-[400px] border rounded-lg overflow-hidden'>
                                                                             <Image 
-                                                                            src={`/image/${MenuList.image}`}
+                                                                            src={`http://localhost:8000/storage/${MenuList.photo_menu}`}
                                                                             width={200}
                                                                             height={180}
-                                                                            alt={MenuList.label}
-                                                                            className="md:w-[100%]"
+                                                                            alt={MenuList.menu_name}
+                                                                            className="md:w-[100%] -mt-20"
                                                                             />
-                                                                            <label className='absolute font-montserrat sm:text-xl sm:bottom-3 lg:bottom-14 sm:left-3 text-white'>{MenuList.label}</label>
-                                                                            <span className='absolute font-montserrat sm:text-xs sm:top-3 sm:right-5 rounded-full bg-white p-2'>{`IDR ${MenuList.price/1000}K`}</span>
+                                                                            <label className='absolute font-montserrat sm:text-xl sm:bottom-3 lg:bottom-14 sm:left-5 text-white'>{MenuList.menu_name}</label>
+                                                                            <span className='absolute font-montserrat sm:text-xs sm:top-3 sm:right-5 rounded-full bg-white p-2 px-5'>{`IDR ${MenuList.price/1000}K`}</span>
                                                                             <div className='sm:hidden lg:block'>
                                                                                 <div className=' absolute bottom-3 lg:flex lg:flex-row gap-2 justify-center items-center bg-gray-100 p-[0.12rem] lg:left-3 rounded-full'>
                                                                                     <button className='font-fredoka border-2 bg-slate-50 hover:bg-green-500 hover:text-white hover:scale-110 rounded-full px-3 py-1 right-0 '>-</button>

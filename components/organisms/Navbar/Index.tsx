@@ -11,12 +11,8 @@ import Link from 'next/link'
 import Lottie from "lottie-react";
 import Avatar from '../../../public/lottie/male-avatar.json'
 
-interface time{
-  welcome : string
-}
 
-export default function Index(props:time) {
-  const {welcome} = props
+export default function Index() {
   const [open, setIsopen] = useState<boolean>(false)
     return (
         <nav className='sm:bg-green-600 lg:bg-transparent sm:fixed lg:block w-full h-[67px] z-10'>

@@ -1,10 +1,8 @@
 export interface MenuListTypes{
     id:number,
-    value:string,
-    label:string,
+    menu_name:string,
     desc:string,
     price:number,
-    stock:number,
-    image:string,
+    photo_menu:string,
     category:string
 }
