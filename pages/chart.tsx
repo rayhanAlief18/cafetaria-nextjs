@@ -6,7 +6,7 @@ export default function chart() {
 return (
     <>
         <div className='flex flex-col'>
-            <Navbar welcome={""} />
+            <Navbar/>
                 <div className='sm:px-7 sm:pt-20'>
                     <div className='sm:flex sm:flex-col'>
                         <div>

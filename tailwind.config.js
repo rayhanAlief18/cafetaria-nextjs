@@ -18,7 +18,15 @@ module.exports = {
             'xl': '1280px',
             // => @media (min-width: 1280px) { ... }
         },
+
         extend: {
+            keyframes: {
+                btnAnimate: {
+                    "0%": { transform: "scale(1)" },
+                    "50%": { transform: "scale(1.25)" },
+                    "100%": { transform: "scale(1)" },
+                }
+            },
             fontFamily: {
                 poppins: ["Poppins", ...defaultTheme.fontFamily.sans],
                 roboto: ["Roboto", ...defaultTheme.fontFamily.sans],

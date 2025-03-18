@@ -6,14 +6,14 @@ import {useState, } from 'react'
 import { HiCheckCircle, HiInformationCircle } from "react-icons/hi";
 import { AiOutlineUser } from "react-icons/ai";
 
-export default function ordersDetails() {
+export default function OrdersDetails() {
 
   const [selectedMethod, setSelectedMethod] = useState("");
   return (
     <>
       <nav className='bg-green-600 w-full lg:h-[70px] lg:flex items-center justify-around'>
           <div className='lg:pl-10'>
-              <h1 className='font-fredoka text-2xl text-white'><span className='text-white'>Ray'</span> Coffe | <span className='text-xl opacity-[90%]'>Orders Payment</span></h1>
+              <h1 className='font-fredoka text-2xl text-white'><span className='text-white'>Ray</span> Coffe | <span className='text-xl opacity-[90%]'>Orders Payment</span></h1>
           </div>
           <div className='lg:flex lg:gap-[20px]'>
             <div className='flex gap-[7px] items-center'>
@@ -32,7 +32,7 @@ export default function ordersDetails() {
         <div className='flex flex-col justify-center bg-[#F6F8FA]  w-[40%] pl-20 py-6'>
             
           <div className='border rounded-xl bg-white'>
-            <div className='border-b bg-green-600 rounded-t-xl text-white                                                                                       '>
+            <div className='border-b bg-green-600 rounded-t-xl text-white'>
               <h1 className='text-center font-fredoka text-2xl pt-3 '>Summary Order</h1>
               <p className='text-center mt-1 mb-2 font-fredoka text-gray-400'>Check the orders before transaction</p>
             </div>

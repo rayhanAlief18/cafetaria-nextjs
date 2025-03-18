@@ -36,7 +36,7 @@ export default function Index() {
                   
                   <aside className={`${open ? "sm:left-0 lg:sm-left-0" : "sm:-left-full lg:left-0"} md:none duration-300 transition-all overflow-hidden sm:absolute lg:block h-screen lg:top-[0%]  sm:top-[100%]  lg:w-[15%] sm:w-[58%] bg-white border`}>
                     <div className="flex flex-row items-center justify-center p-5 my-3">
-                        <p className='font-fredoka text-2xl '><span className='text-green-600'>Ray'</span>Coffe</p>
+                        <p className='font-fredoka text-2xl '><span className='text-green-600'>Ray</span>Coffe</p>
                     </div>
                       
 
